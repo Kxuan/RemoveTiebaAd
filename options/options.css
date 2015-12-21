@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body {
+    padding: 0;
+    margin: 0;
+    height: 200px;
+    overflow-y: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+label:hover {
+    color: red;
+}
+
+label {
+    cursor: pointer;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.tab {
+    width: 100px;
+    float: left;
+}
+
+.tab h2 {
+    padding-left: 10px;
+}
+
+.tab ul {
+    list-style: none;
+    padding: 0 5px 0 0;
+    margin: 0;
+}
+
+.tab ul li {
+    margin: 10px 0 10px 10px;
+    cursor: pointer;
+}
+
+.tab ul li:hover {
+    text-decoration: underline;
+}
+
+.tab ul li.active {
+    margin-left: 0;
+    padding-left: 8px;
+    border-left: solid rgb(78, 87, 100) 2px;
+}
+
+.tab ul li.active a {
+    color: #000;
+}
+
+.tab ul a {
+    color: #999;
+}
+
+.container {
+    display: inline-block;
+}
+
+.container .page {
+    display: none;
+}
+
+.container .page.active {
+    display: block;
+}
+
+.actions {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 100%;
+    text-align: right;
+}
+
+.container .page > div {
+    margin: 5px 0;
+}

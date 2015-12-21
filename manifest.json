@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "百度贴吧去广告",
+  "description": "这个拓展程序帮助你去除百度贴吧的广告",
+  "version": "1.0",
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://tieba.baidu.com/f*"
+      ],
+      "js": [
+        "content_script/common.js",
+        "content_script/sidebar.js",
+        "content_script/list.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://tieba.baidu.com/p/*"
+      ],
+      "js": [
+        "content_script/common.js",
+        "content_script/sidebar.js",
+        "content_script/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "*://tieba.baidu.com/*"
+  ]
+}

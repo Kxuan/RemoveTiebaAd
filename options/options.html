@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>百度贴吧去广告 - 设置</title>
+    <link href="options.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div>
+    <div class="tab">
+        <h2>页面</h2>
+        <ul class="tab" role="tablist">
+            <li data-page="sidebar">边栏</li>
+            <li data-page="list">帖子列表页</li>
+            <li data-page="content">帖子内容页</li>
+            <li data-page="about">帖子内容页</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="pg_sidebar" class="page">
+            <h2>边栏</h2>
+            <div><label><input data-opt="feeds" type="checkbox" checked/>信息流广告</label></div>
+            <div><label><input data-opt="recommend_app" type="checkbox" checked/>推荐应用</label></div>
+            <div><label><input data-opt="u9" type="checkbox" checked/>游久广告(热门卡包)</label></div>
+            <div><label><input data-opt="life_helper" type="checkbox" checked/>生活助手</label></div>
+            <div><label><input data-opt="friend_bar" type="checkbox" />友情贴吧</label></div>
+        </div>
+        <div id="pg_list" class="page">
+            <h2>帖子列表页</h2>
+            <div><label><input data-opt="feeds" type="checkbox" checked/>信息流广告</label></div>
+            <div><label><input data-opt="search_bar" type="checkbox" checked/>图片广告(顶部搜索栏右侧)</label></div>
+            <div><label><input data-opt="live" type="checkbox" checked/>直播推荐</label></div>
+            <div><label><input data-opt="forum_recommend" type="checkbox" checked/>你可能感兴趣的吧</label></div>
+        </div>
+        <div id="pg_content" class="page">
+            <h2>帖子内容页</h2>
+            <div><label><input data-opt="feeds" type="checkbox" checked/>信息流广告</label></div>
+            <div><label><input data-opt="search_bar" type="checkbox" checked/>图片广告(顶部搜索栏右侧)</label></div>
+            <div><label><input data-opt="thread_recommend" type="checkbox" checked/>帖子推荐</label></div>
+        </div>
+        <div id="pg_about" class="page">
+            <h2>关于</h2>
+            <div>有什么问题可以</div>
+        </div>
+    </div>
+</div>
+<div class="actions">
+    <button id="reset">重置</button>
+    <button id="save">保存</button>
+</div>
+<script type="text/javascript" src="options.js"></script>
+</body>
+</html>
