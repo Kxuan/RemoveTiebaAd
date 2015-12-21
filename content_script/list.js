@@ -21,6 +21,7 @@
         feeds: 'xpath://*[text()="推广"]/../../..',
         live: 'css:.game_live_list',
         forum_recommend: 'css:.forum_recommend',
+        xiu8: 'css:.j_play_list_panel',
         __proto__: null
     };
 })();
