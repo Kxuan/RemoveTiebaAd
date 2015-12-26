@@ -14,6 +14,7 @@
       ],
       "js": [
         "content_script/common.js",
+        "content_script/general.js",
         "content_script/sidebar.js",
         "content_script/list.js"
       ],
@@ -25,6 +26,7 @@
       ],
       "js": [
         "content_script/common.js",
+        "content_script/general.js",
         "content_script/sidebar.js",
         "content_script/content.js"
       ],

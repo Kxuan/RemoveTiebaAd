@@ -104,11 +104,13 @@
             });
     }
 
-
-    setCurrentPage('list');
     document.addEventListener('DOMContentLoaded', restoreOptions);
     document.querySelector('#reset').addEventListener('click', function () {
         setOptionsToPage(defaultsOptions);
     });
     document.querySelector('#save').addEventListener('click', saveOptions);
+
+
+    //Set default page
+    setCurrentPage('general');
 })();

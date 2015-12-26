@@ -11,23 +11,29 @@ function executeSelector(root, selector) {
         //If selector is an array, merge all results into one array
         return Array.prototype.concat.apply([], selector.map(executeSelector.bind(this, root), this));
     }
-
-    var m = selector.match(/^(\w+?):(.*)$/);
-    if (!m) return null;
-    //var [type, query] = m;
-    var type = m[1],
-        query = m[2];
-    switch (type) {
-        case 'css':
-            return Array.prototype.slice.call(root.querySelectorAll(query));
-        case 'xpath':
-            var resolver = document.evaluate(query, root, null, XPathResult.ANY_TYPE, null);
-            var ret = [];
-            var el;
-            while (el = resolver.iterateNext()) {
-                ret.push(el);
+    switch (typeof selector) {
+        case 'string':
+            var m = selector.match(/^(\w+?):(.*)$/);
+            if (!m) return null;
+            //var [type, query] = m;
+            var type = m[1],
+                query = m[2];
+            switch (type) {
+                case 'css':
+                    return Array.prototype.slice.call(root.querySelectorAll(query));
+                case 'xpath':
+                    var resolver = document.evaluate(query, root, null, XPathResult.ANY_TYPE, null);
+                    var ret = [];
+                    var el;
+                    while (el = resolver.iterateNext()) {
+                        ret.push(el);
+                    }
+                    return ret;
             }
-            return ret;
+            break;
+        case 'function':
+            return selector.call(root, root);
+            break;
     }
 }
 
