@@ -17,24 +17,27 @@
 
     var selectorMap = {
         //Call 1-1-0 to find the ad
-        feeds: 'css:*[data-daid]',
+        feeds: selectGeneralFeeds,
         __proto__: null
     };
 
     /* @this {HTMLElement} */
     function selectGeneralFeeds() {
-        var all_div = this.querySelectorAll('*[data-daid]'),
+        var allStyleElements = this.querySelectorAll('li+style,div+style'),
             el;
         var results = [];
-        for (var i = 0; i < all_div.length; i++) {
-            el = all_div[i];
+        for (var i = 0; i < allStyleElements.length; i++) {
+            //Style must be inline
+            if (allStyleElements[i].href)
+                continue;
+
+            el = allStyleElements[i].previousElementSibling;
+            if (el.style.display == 'none')
+                continue;
+
             for (var ci = 0; ci < el.classList.length; ci++) {
-                if (el.style.display != 'none' && el.classList[ci].match(/^[a-z0-9]+\d+[a-z0-9]+$/)) {
-                    var styleEl = el.nextElementSibling;
-                    if (styleEl &&
-                        styleEl.tagName == "STYLE" && !styleEl.href) {
-                        results.push(el);
-                    }
+                if (el.classList[ci].match(/^[a-z0-9]+\d+[a-z0-9]+$/)) {
+                    results.push(el);
                     break;
                 }
             }

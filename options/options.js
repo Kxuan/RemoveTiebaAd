@@ -110,7 +110,6 @@
     });
     document.querySelector('#save').addEventListener('click', saveOptions);
 
-
     //Set default page
-    setCurrentPage('general');
+     setCurrentPage('general');
 })();
