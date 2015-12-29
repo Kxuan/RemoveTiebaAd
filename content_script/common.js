@@ -53,10 +53,11 @@ function removeElement(element) {
         for (var i = 0; i < childImgEl.length; i++) {
             var imgEl = childImgEl[i];
             imgEl.dispatchEvent(onLoadEvent);
+            imgEl.src = null;
         }
-        parentEl.removeChild(element);
+        //parentEl.removeChild(element);
 
-        //element.style.display = 'none';
+        element.style.display = 'none';
         element = parentEl;
     } while (element.children.length == 1);
 }
