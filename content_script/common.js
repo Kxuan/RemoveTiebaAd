@@ -38,12 +38,25 @@ function executeSelector(root, selector) {
 }
 
 function removeElement(element) {
+
+    var onLoadEvent = document.createEvent('Event');
+    onLoadEvent.initEvent('load', false, false);
+
     var parentEl;
     do {
         parentEl = element.parentElement;
         if (!parentEl)
             return;
-        element.style.display = 'none';
+
+        //模拟用户看到广告的图片
+        var childImgEl = element.querySelectorAll('img');
+        for (var i = 0; i < childImgEl.length; i++) {
+            var imgEl = childImgEl[i];
+            imgEl.dispatchEvent(onLoadEvent);
+        }
+        parentEl.removeChild(element);
+
+        //element.style.display = 'none';
         element = parentEl;
     } while (element.children.length == 1);
 }
