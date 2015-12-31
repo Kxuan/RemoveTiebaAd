@@ -26,15 +26,11 @@
         if (el.length > 0) {
             el = el[0];
         } else {
-            el = document.getElementsByClassName('aside');
-            if (el.length > 0) {
-                el = el[0];
-
+            el = document.getElementById('aside');
+            if (el) {
                 while (el.children.length == 1) {
                     el = el.children[0];
                 }
-            } else {
-                el = null;
             }
         }
         return el;
