@@ -45,11 +45,6 @@
             'css:.j_zyq_mod_friend'
         ],
 
-        feeds: [
-            //Call 1-1-0 to find the ad
-            'xpath:./div[count(*)=1]/a[count(*)=1]/img[count(*)=0]/../..',
-            'css:#pagelet_frs-aside\\/pagelet\\/ad'
-        ],
         xiu8: 'css:.live_show_aside',
         __proto__: null
     };
